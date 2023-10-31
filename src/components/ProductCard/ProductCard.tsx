@@ -12,19 +12,19 @@ type Item = {
   price: number;
 };
 
-const ProductCard = ({ item: { image, title } }: ProductCardProps) => {
-  const isDiscount = true;
+const ProductCard = ({ item: { title, image, oldPrice, price } }: ProductCardProps) => {
   return (
     <div className="card">
       <div className="image">
-        {isDiscount && <span>Title</span>}
+        <span>{title}</span>
         <img src={image} alt="" className="mainImage" />
-        <img src="/img/product4.jpg" alt="" className="secondImage" />
       </div>
-      <h2 className="title">{title}</h2>
-      <div className="prices">
-        <h3>$ 100</h3>
-        <h3>$ 140</h3>
+      <p><em>{title}</em></p>
+      <div className="price">
+      <h3 style={{
+        color: 'gray'
+      }}><strike>{`$${oldPrice}`}</strike></h3>
+      <h3>{`$${price}`}</h3>
       </div>
     </div>
   );

@@ -3,7 +3,6 @@
   overflow: hidden;
   padding: 26px;
   width: 75%;
-  // margin-top: 3rem;
   margin: 0 auto;
 
   &:hover {
@@ -18,8 +17,6 @@
     overflow: hidden;
     gap: 2rem;
     scroll-behavior: smooth;
-    // width: 400px;
-    // transform: translateX(0);
   }
 
   button {
@@ -40,14 +37,15 @@
   }
 
   .prev {
-    z-index: 1;
+    z-index: 2;
     top: 50%;
     left: 0;
     transform: translateY(-50%);
     margin-left: 40px;
   }
-
+  
   .next {
+    z-index: 2;
     margin-right: 4rem;
     top: 50%;
     right: 0;

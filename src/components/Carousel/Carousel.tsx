@@ -1,44 +1,208 @@
-import MyCard from "../MyCard/MyCard";
 import "./Carousel.scss";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import ProductCard from "../ProductCard/ProductCard";
 
 const Carousel = () => {
-  // const [sliderIndex, setSliderIndex] = useState(0);
-  const box = document.querySelector(".carousel__container");
+  const data = [
+    {
+      id: 1,
+      image: "img/product1.jpg",
+      title: "Product 1",
+      oldPrice: 29.99,
+      price: 19.99,
+    },
+    {
+      id: 2,
+      image: "img/product2.jpg",
+      title: "Product 2",
+      oldPrice: 39.99,
+      price: 29.99,
+    },
+    {
+      id: 3,
+      image: "img/product3.jpg",
+      title: "Product 3",
+      oldPrice: 49.99,
+      price: 39.99,
+    },
+    {
+      id: 4,
+      image: "img/product4.jpg",
+      title: "Product 4",
+      oldPrice: 49.99,
+      price: 39.99,
+    },
+    {
+      id: 4,
+      image: "img/product4.jpg",
+      title: "Product 4",
+      oldPrice: 49.99,
+      price: 39.99,
+    },
+    {
+      id: 4,
+      image: "img/product4.jpg",
+      title: "Product 4",
+      oldPrice: 49.99,
+      price: 39.99,
+    },
+    {
+      id: 4,
+      image: "img/product4.jpg",
+      title: "Product 4",
+      oldPrice: 49.99,
+      price: 39.99,
+    },
+    {
+      id: 4,
+      image: "img/product4.jpg",
+      title: "Product 4",
+      oldPrice: 49.99,
+      price: 39.99,
+    },
+    {
+      id: 4,
+      image: "img/product4.jpg",
+      title: "Product 4",
+      oldPrice: 49.99,
+      price: 39.99,
+    },
+    {
+      id: 4,
+      image: "img/product4.jpg",
+      title: "Product 4",
+      oldPrice: 49.99,
+      price: 39.99,
+    },
+    {
+      id: 4,
+      image: "img/product4.jpg",
+      title: "Product 4",
+      oldPrice: 49.99,
+      price: 39.99,
+    },
+    {
+      id: 4,
+      image: "img/product4.jpg",
+      title: "Product 4",
+      oldPrice: 49.99,
+      price: 39.99,
+    },
+    {
+      id: 4,
+      image: "img/product4.jpg",
+      title: "Product 4",
+      oldPrice: 49.99,
+      price: 39.99,
+    },
+    {
+      id: 4,
+      image: "img/product4.jpg",
+      title: "Product 4",
+      oldPrice: 49.99,
+      price: 39.99,
+    },
+    {
+      id: 4,
+      image: "img/product4.jpg",
+      title: "Product 4",
+      oldPrice: 49.99,
+      price: 39.99,
+    },
+    {
+      id: 4,
+      image: "img/product4.jpg",
+      title: "Product 4",
+      oldPrice: 49.99,
+      price: 39.99,
+    },
+    {
+      id: 4,
+      image: "img/product4.jpg",
+      title: "Product 4",
+      oldPrice: 49.99,
+      price: 39.99,
+    },
+    {
+      id: 4,
+      image: "img/product4.jpg",
+      title: "Product 4",
+      oldPrice: 49.99,
+      price: 39.99,
+    },
+    {
+      id: 4,
+      image: "img/product4.jpg",
+      title: "Product 4",
+      oldPrice: 49.99,
+      price: 39.99,
+    },
+    {
+      id: 4,
+      image: "img/product4.jpg",
+      title: "Product 4",
+      oldPrice: 49.99,
+      price: 39.99,
+    },
+    {
+      id: 4,
+      image: "img/product4.jpg",
+      title: "Product 4",
+      oldPrice: 49.99,
+      price: 39.99,
+    },
+    {
+      id: 4,
+      image: "img/product4.jpg",
+      title: "Product 4",
+      oldPrice: 49.99,
+      price: 39.99,
+    },
+    {
+      id: 4,
+      image: "img/product4.jpg",
+      title: "Product 4",
+      oldPrice: 49.99,
+      price: 39.99,
+    },
+    {
+      id: 4,
+      image: "img/product4.jpg",
+      title: "Product 4",
+      oldPrice: 49.99,
+      price: 39.99,
+    }
+  ];
+
   const handlePrev = () => {
-    const width = box?.clientWidth;
-    box.scrollLeft = box?.scrollLeft - width;
-    console.log(width);
+    const box = document.querySelector(".carousel__container");
+    if (box) {
+      const width = box?.clientWidth;
+      box.scrollLeft = box?.scrollLeft - width;
+    }
   };
   const handleNext = () => {
-    const width = box?.clientWidth;
-    box.scrollLeft = box?.scrollLeft + width;
-    console.log(width);
+    const box = document.querySelector(".carousel__container");
+    if (box) {
+      const width = box?.clientWidth;
+      box.scrollLeft = box?.scrollLeft + width;
+    }
   };
   return (
     <div className="carousel">
       <button className="prev" onClick={handlePrev}>
-        &lt;
+        <ArrowBackIcon />
       </button>
       <div className="carousel__container">
-        <MyCard num="1" />
-        <MyCard num="2" />
-        <MyCard num="3" />
-        <MyCard num="4" />
-        <MyCard num="5" />
-        <MyCard num="6" />
-        <MyCard num="7" />
-        <MyCard num="8" />
-        <MyCard num="9" />
-        <MyCard num="10" />
-        <MyCard num="11" />
-        <MyCard num="12" />
-        <MyCard num="13" />
-        <MyCard num="14" />
-        <MyCard num="15" />
-        <MyCard num="16" />
+        {
+          data.map((item, index) => {
+            return <ProductCard key={index} item={item} />
+          })
+        }
       </div>
       <button className="next" onClick={handleNext}>
-        &gt;
+        <ArrowForwardIcon />
       </button>
     </div>
   );

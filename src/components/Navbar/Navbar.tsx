@@ -32,7 +32,7 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          <h2 className="navbar__logo">LAMASTORE</h2>
+          <h2 className="navbar__logo">E-STORE</h2>
           <div className="navbar__links">
             <div className="navbar__link">
               <Link to="/">Home</Link>

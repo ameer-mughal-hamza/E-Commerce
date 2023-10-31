@@ -1,41 +1,15 @@
-import ProductCard from "../ProductCard/ProductCard";
+import Carousel from "../Carousel/Carousel";
 import "./featured_products.scss";
 
-const FeaturedProducts = () => {
-  const data = [
-    {
-      id: 1,
-      image: "img/product1.jpg",
-      title: "Product 1",
-      oldPrice: 29.99,
-      price: 19.99,
-    },
-    {
-      id: 2,
-      image: "img/product2.jpg",
-      title: "Product 2",
-      oldPrice: 39.99,
-      price: 29.99,
-    },
-    {
-      id: 3,
-      image: "img/product3.jpg",
-      title: "Product 3",
-      oldPrice: 49.99,
-      price: 39.99,
-    },
-    {
-      id: 4,
-      image: "img/product4.jpg",
-      title: "Product 4",
-      oldPrice: 49.99,
-      price: 39.99,
-    },
-  ];
+type Props = {
+  title: string;
+};
+
+const FeaturedProducts = ({ title }: Props) => {
   return (
     <div className="featured">
       <div className="featured__top">
-        <h1>Featured Products</h1>
+        <h1>{title}</h1>
         <p>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore
           provident libero non voluptas nisi nobis nemo amet veniam ad. Debitis
@@ -46,9 +20,7 @@ const FeaturedProducts = () => {
         </p>
       </div>
       <div className="featured__bottom">
-        {data.map((item) => {
-          return <ProductCard item={item}></ProductCard>;
-        })}
+        <Carousel />
       </div>
     </div>
   );
